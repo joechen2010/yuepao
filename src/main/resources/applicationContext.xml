@@ -10,6 +10,8 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
+	<bean class="com.joe.mvc.common.SpringContextHolder" lazy-init="false"/>
+	
 	<!-- Activates various annotations to be detected in bean classes -->
 	<context:annotation-config />
 	
@@ -25,16 +27,17 @@
 	<import resource="classpath:hibernate-context.xml" />
 	
 	<bean id="config" class="com.joe.mvc.config.Config">
-		<property name="account" value="yuehui"/>
+		<property name="token" value="yuehuizhongxin"/>
+		<property name="account" value="yuehuizhongxin"/>
 		<property name="newMsg" value="Hello2BizUser"/>	
 		<property name="newReply">
-            <value><![CDATA[]]>您好，同村约会为你安排距离你最近的约会，请回复你的性别(男或女)，同村约会将为你寻找附近有意向约会的人</value>
+            <value><![CDATA[]]>您好，约会呼叫中心为你安排距离你最近的约会，请回复你的性别+手机号或你的性别+微信号(如:男13800138000或男weixin)，约会呼叫中心将为你寻找附近有意向约会的人</value>
         </property>	
 		<property name="newLocationReply">
-            <value><![CDATA[]]>您好，同村约会为你安排距离你最近的约会，请输入你的地址，约会近在近在咫尺</value>
+            <value><![CDATA[]]>您好，约会呼叫中心为你安排距离你最近的约会，请输入你的地址，约会近在近在咫尺</value>
         </property>
         <property name="result">
-            <value><![CDATA[]]>同村约会为你找到附近2公里内的约会微信帐号有【@USERS】,赶快联系吧</value>
+            <value><![CDATA[]]>约会呼叫中心为你找到附近2公里内的约会的手机号或微信帐号有【@USERS】,赶快联系吧</value>
         </property>
         <property name="noResult">
             <value><![CDATA[]]>对不起，您附近暂时没有约会意向，稍候再来试试</value>

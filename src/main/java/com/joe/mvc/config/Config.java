@@ -8,6 +8,7 @@ public class Config {
 	private String newLocationReply;
 	private String result;
 	private String noResult;
+	private String token;
 	
 	public String getAccount() {
 		return account;
@@ -45,5 +46,12 @@ public class Config {
 	public void setNoResult(String noResult) {
 		this.noResult = noResult;
 	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 
+	
 }

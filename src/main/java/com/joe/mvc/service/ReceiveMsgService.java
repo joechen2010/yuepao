@@ -92,7 +92,9 @@ public class ReceiveMsgService {
 		
 		  logger.debug("Retrieving nearest user");	
 		
-		  String sql = "select m.* from T_RESEIVE_MSG m left join T_USER_INFO u on m.FromUserName = u.UserName "
+		  String sql = "select m.FromUserName,m.CreateTime,m.MsgType,m.Content,m.MsgId,m.PicUrl,m.Location_X,m.Location_Y,m.Scale,"
+				  +"m.Label,m.Title,m.Description,m.Url,m.Event,m.Latitude,m.Longitude,m.A_Precision,m.EventKey,u.Mobile as ToUserName"
+				  +" from T_RESEIVE_MSG m left join T_USER_INFO u on m.FromUserName = u.UserName "
 				  +" where m.Location_X > " 
 				  + latitude + "-1 and m.Location_X < " + latitude + "+1 and m.Location_Y > "
 				  + longitude +"-1 and m.Location_Y < "+ longitude +"+1 "

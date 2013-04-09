@@ -31,6 +31,7 @@ public class MessageConverter {
         xstream.aliasField("Latitude", ReceiveMsg.class, "latitude");
         xstream.aliasField("Longitude", ReceiveMsg.class, "longitude");
         xstream.aliasField("Precision", ReceiveMsg.class, "precision");
+        xstream.aliasField("EventKey", ReceiveMsg.class, "eventKey");
         
         ReceiveMsg receiveMsg = (ReceiveMsg)xstream.fromXML(xml); 
         return receiveMsg;
@@ -53,6 +54,21 @@ public class MessageConverter {
 	        
 	        String xml =xstream.toXML(sendMsg);
 	        return xml;
+	}
+	
+	public static String generateSendMsg(SendMsg sendMsg){
+		StringBuffer sb = new StringBuffer();
+		 sb.append("<xml><ToUserName><![CDATA[").append(sendMsg.getToUserName())
+	    .append("]]></ToUserName><FromUserName><![CDATA[")
+	    .append(sendMsg.getFromUserName())
+	    .append("]]></FromUserName><CreateTime>")
+	    .append(sendMsg.getCreateTime())
+	    .append("</CreateTime><MsgType><![CDATA["+sendMsg.getMsgType()+"]]></MsgType>")
+	    .append("<Content><![CDATA[")
+	    .append(sendMsg.getContent())
+	    .append("]]></Content>")
+	 	.append("<FuncFlag>0</FuncFlag></xml>");
+		 return sb.toString();
 	}
 	
 }

@@ -17,6 +17,16 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:applicationContext.xml</param-value>
 	</context-param>
+	
+	 <servlet>
+        <servlet-name>yuehui</servlet-name>
+        <servlet-class>com.joe.mvc.controller.Yuehui</servlet-class>
+         <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>yuehui</servlet-name>
+        <url-pattern>/yuehui</url-pattern>
+    </servlet-mapping>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

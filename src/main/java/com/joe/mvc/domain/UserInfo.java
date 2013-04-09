@@ -37,12 +37,15 @@ public class UserInfo implements java.io.Serializable {
 	@Column(name = "Sex")
 	private String sex;
 	
+	@Column(name = "Mobile")
+	private String mobile;
+	
 	public UserInfo(){}
 	
-	public UserInfo(String userName, String sex) {
-		
+	public UserInfo(String userName, String sex, String mobile) {
 		this.userName = userName;
 		this.sex = sex;
+		this.mobile = mobile;
 	}
 
 	public Integer getId() {
@@ -67,6 +70,14 @@ public class UserInfo implements java.io.Serializable {
 
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	
 	

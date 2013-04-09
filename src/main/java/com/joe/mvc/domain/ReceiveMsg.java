@@ -68,6 +68,9 @@ public class ReceiveMsg implements java.io.Serializable {
 	
 	@Column(name = "A_Precision")
 	private Double precision;
+	
+	@Column(name = "EventKey")
+	private String eventKey;
 
 	// Constructors
 
@@ -86,7 +89,7 @@ public class ReceiveMsg implements java.io.Serializable {
 			Long createTime, String msgType, String content,
 			String picUrl, Double locationX, Double locationY, Integer scale,
 			String label, String title, String description, String url,
-			String event, Double latitude, Double longitude, Double precision) {
+			String event, Double latitude, Double longitude, Double precision,String eventKey) {
 		this.msgId = msgId;
 		this.toUserName = toUserName;
 		this.fromUserName = fromUserName;
@@ -105,6 +108,7 @@ public class ReceiveMsg implements java.io.Serializable {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.precision = precision;
+		this.eventKey = eventKey;
 	}
 
 	// Property accessors
@@ -253,4 +257,13 @@ public class ReceiveMsg implements java.io.Serializable {
 		this.precision = precision;
 	}
 
+	public String getEventKey() {
+		return eventKey;
+	}
+
+	public void setEventKey(String eventKey) {
+		this.eventKey = eventKey;
+	}
+
+	
 }

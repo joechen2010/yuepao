@@ -37,8 +37,8 @@ public class TextHandler extends AbstractHandler{
 		if(existsUser != null){
 			sendMsg.setContent(config.getNewLocationReply());
 		}else{
-			if(msg.getContent().equals("男") || msg.getContent().equals("女") ){
-				UserInfo user = new UserInfo(msg.getFromUserName(), msg.getContent());
+			if(msg.getContent().startsWith("男") || msg.getContent().startsWith("女") ){
+				UserInfo user = new UserInfo(msg.getFromUserName(), msg.getContent().substring(0, 1), msg.getContent().substring(1, msg.getContent().length()));
 				userInfoService.add(user);
 				sendMsg.setContent(config.getNewLocationReply());
 			}else{
@@ -75,7 +75,5 @@ public class TextHandler extends AbstractHandler{
 	public void setUserInfoService(UserInfoService userInfoService) {
 		this.userInfoService = userInfoService;
 	}
-
-	
 	
 }

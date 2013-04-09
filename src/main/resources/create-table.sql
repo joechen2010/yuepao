@@ -41,3 +41,6 @@ Create table T_USER_INFO
 	UserName VARCHAR(100),
 	Sex VARCHAR(10),
 )
+
+alter table T_USER_INFO add column Mobile varchar(20) DEFAULT NULL;
+alter table T_RESEIVE_MSG add column EventKey varchar(20) DEFAULT NULL;

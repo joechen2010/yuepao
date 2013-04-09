@@ -51,7 +51,8 @@ public class LocationHandler extends AbstractHandler{
 		if(results.size() > 0){
 			for(int i = 0 ; i < results.size(); i++){
 				ReceiveMsg m = results.get(i);
-				users += m.getFromUserName();
+				String userName = m.getToUserName() == null ? "" : m.getToUserName();
+				users += userName;
 				if(i < results.size()-1)
 					users += "，";
 			}
